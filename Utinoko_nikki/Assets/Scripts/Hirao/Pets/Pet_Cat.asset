@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d2ab40b9227244397d32bc37fb40bb, type: 3}
+  m_Name: Pet_Cat
+  m_EditorClassIdentifier: 
+  typeId: cat
+  displayName: "\u306D\u3053"
+  defaultHabitat: 1
+  movementType: 1
+  icon: {fileID: -6431864369744849268, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  sittingPoses:
+  - {fileID: -6431864369744849268, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  - {fileID: 920659134005656123, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  - {fileID: 2428440098061278105, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  - {fileID: -149041754989461788, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  walkRightFrames:
+  - {fileID: -6307115720689465900, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  - {fileID: -1616701338424939354, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  - {fileID: 8576456676110316510, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  - {fileID: -4025069968424050227, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  walkLeftFrames:
+  - {fileID: 1343272855493293341, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  - {fileID: 2512632950373690824, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  - {fileID: -8289927042817549513, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  - {fileID: -5683348639867883912, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  smileSprite: {fileID: 7469380289501897634, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  groomingSprite: {fileID: 6196742790145042841, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  crouchSprite: {fileID: 5100593198395118275, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  sleepSprite: {fileID: 3040110199191332475, guid: 6cd6ce2b031800249befce080075afe7, type: 3}
+  initialHunger: 100
+  hungerDecayPerGameSecond: 0
+  growthPerCareAction: 1
+  usesHunger: 1
+  usesAffection: 1
