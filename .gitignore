@@ -114,3 +114,14 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# うちの子日記 Docker関連
+/Utinoko_nikki_servser/mysql/
+/Utinoko_nikki_servser/phpmyadmin/sessions/
+
+# Laravel
+/Utinoko_nikki_servser/app/html/.env
+/Utinoko_nikki_servser/app/html/vendor/
+/Utinoko_nikki_servser/app/html/node_modules/
+
+/Utinoko_nikki_servser/.idea/
