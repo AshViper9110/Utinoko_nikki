@@ -37,7 +37,7 @@ services:
       - "3306:3306" # ホスト側ポート番号:コンテナ内ポート番号
     environment: # 環境変数
       - MYSQL_ROOT_PASSWORD=root  # rootパスワード
-      - MYSQL_DATABASE=training   # 使用するデータベース名
+      - MYSQL_DATABASE=Utinoko_nikki   # 使用するデータベース名
       - MYSQL_USER=jobi           # 使用するroot以外のユーザー名
       - MYSQL_PASSWORD=jobi       # 使用するroot以外のユーザーパスワード
       - TZ=Asia/Tokyo
