@@ -42,14 +42,18 @@ services:
       - MYSQL_PASSWORD=jobi       # 使用するroot以外のユーザーパスワード
       - TZ=Asia/Tokyo
 
+
   # DBサーバー管理ツールコンテナ
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin  # DockerHubイメージ名を指定
-    environment: # 環境変数
-      - PMA_HOST=mysql     # 接続ホスト名
-      - PMA_USER=root      # 接続ユーザー名
-      - PMA_PASSWORD=root  # 接続ユーザーパスワード
+    image: phpmyadmin/phpmyadmin
     ports:
-      - "8080:80"  # ホスト側ポート番号:コンテナ内ポート番号
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root
+    depends_on:
+      - mysql
     volumes:
-      - ./phpmyadmin/sessions:/sessions  # セッション情報の保存先
+      - ./phpmyadmin/sessions:/sessions
