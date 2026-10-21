@@ -125,3 +125,16 @@ InitTestScene*.unity*
 /Utinoko_nikki_servser/app/html/node_modules/
 
 /Utinoko_nikki_servser/.idea/
+
+# Google OAuth認証情報
+.env
+.env.*
+*client_secret*.json
+*credentials*.json
+
+# ローカル認証設定
+*.secrets.json
+
+# Firebase generated local repository
+/Utinoko_nikki/Assets/GeneratedLocalRepo/
+/Utinoko_nikki/Assets/GeneratedLocalRepo.meta
