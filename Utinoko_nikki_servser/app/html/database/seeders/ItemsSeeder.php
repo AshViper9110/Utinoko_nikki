@@ -15,6 +15,10 @@ class ItemsSeeder extends Seeder
                 'name' => 'ちゅーる',
                 'type' => 1
             ],
+            [
+                'name' => 'グラン・デリ',
+                'type' =>1
+            ],
         ]);
     }
 }
