@@ -193,6 +193,7 @@ namespace AquaGarden.Presentation
                     state = BrainState.Acting;
                     stateTimer = Random.Range(minActionSeconds, maxActionSeconds);
                     spriteRenderer.sprite = actionSprite;
+                    spriteRenderer.flipX = facing == Facing.Left;
                     return;
                 }
             }
@@ -255,7 +256,7 @@ namespace AquaGarden.Presentation
             if (frameTimer >= movementFrameInterval)
             {
                 frameTimer = 0f;
-                movementFrame = (movementFrame + 1) % 4;
+                movementFrame = (movementFrame + 1) % 2;
                 ShowMovementFrame();
             }
         }
@@ -273,8 +274,7 @@ namespace AquaGarden.Presentation
         private void ShowMovementFrame()
         {
             if (petDefinition == null) return;
-            Sprite[] frames = facing == Facing.Left
-                ? petDefinition.WalkLeftFrames : petDefinition.WalkRightFrames;
+            Sprite[] frames = petDefinition.WalkFrames;
 
             if (facing == Facing.Front || facing == Facing.Back ||
                 frames == null || frames.Length == 0 ||
@@ -284,17 +284,29 @@ namespace AquaGarden.Presentation
                 return;
             }
             spriteRenderer.sprite = frames[movementFrame];
+            spriteRenderer.flipX = facing == Facing.Left;
         }
 
         private void ShowIdlePose()
         {
             if (petDefinition == null) return;
             Sprite[] poses = petDefinition.SittingPoses;
-            int index = (int)facing;
+            int index = facing switch
+            {
+                Facing.Front => 0,
+                Facing.Right => 1,
+                Facing.Left => 1,
+                Facing.Back => 2,
+                _ => 0
+            };
+
             if (poses != null && index < poses.Length && poses[index] != null)
                 spriteRenderer.sprite = poses[index];
             else if (petDefinition.Icon != null)
                 spriteRenderer.sprite = petDefinition.Icon;
+
+            // The side pose is authored facing right; mirror it when facing left.
+            spriteRenderer.flipX = facing == Facing.Left;
         }
 
         private Sprite GetActionSprite(PetAction action)
@@ -314,6 +326,7 @@ namespace AquaGarden.Presentation
             if (petDefinition == null || petDefinition.SmileSprite == null) return;
             currentAction = PetAction.Smile;
             spriteRenderer.sprite = petDefinition.SmileSprite;
+            spriteRenderer.flipX = facing == Facing.Left;
             petReactionTimer = petReactionSeconds;
             state = BrainState.Acting;
             stateTimer = petReactionTimer;
@@ -345,6 +358,7 @@ namespace AquaGarden.Presentation
             state = BrainState.Acting;
             stateTimer = Random.Range(minActionSeconds, maxActionSeconds);
             spriteRenderer.sprite = actionSprite;
+            spriteRenderer.flipX = facing == Facing.Left;
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace AquaGarden.Data
 {
@@ -16,10 +17,11 @@ namespace AquaGarden.Data
         [SerializeField] private Sprite icon;
 
         [Header("Animation sprites")]
-        [Tooltip("Order: Front, Right, Left, Back.")]
-        [SerializeField] private Sprite[] sittingPoses = new Sprite[4];
-        [SerializeField] private Sprite[] walkRightFrames = new Sprite[4];
-        [SerializeField] private Sprite[] walkLeftFrames = new Sprite[4];
+        [Tooltip("Order: Front, Side (faces right; code mirrors for left), Back.")]
+        [SerializeField] private Sprite[] sittingPoses = new Sprite[3];
+        [FormerlySerializedAs("walkRightFrames")]
+        [Tooltip("Two side-walking frames. The controller mirrors them for leftward movement.")]
+        [SerializeField] private Sprite[] walkFrames = new Sprite[2];
         [SerializeField] private Sprite smileSprite;
         [SerializeField] private Sprite groomingSprite;
         [SerializeField] private Sprite crouchSprite;
@@ -38,8 +40,7 @@ namespace AquaGarden.Data
         public PetMovementType MovementType => movementType;
         public Sprite Icon => icon;
         public Sprite[] SittingPoses => sittingPoses;
-        public Sprite[] WalkRightFrames => walkRightFrames;
-        public Sprite[] WalkLeftFrames => walkLeftFrames;
+        public Sprite[] WalkFrames => walkFrames;
         public Sprite SmileSprite => smileSprite;
         public Sprite GroomingSprite => groomingSprite;
         public Sprite CrouchSprite => crouchSprite;
@@ -58,9 +59,8 @@ namespace AquaGarden.Data
             initialHunger = Mathf.Clamp(initialHunger, 0f, 100f);
             hungerDecayPerGameSecond = Mathf.Max(0f, hungerDecayPerGameSecond);
             growthPerCareAction = Mathf.Max(0f, growthPerCareAction);
-            if (sittingPoses == null || sittingPoses.Length != 4) System.Array.Resize(ref sittingPoses, 4);
-            if (walkRightFrames == null || walkRightFrames.Length != 4) System.Array.Resize(ref walkRightFrames, 4);
-            if (walkLeftFrames == null || walkLeftFrames.Length != 4) System.Array.Resize(ref walkLeftFrames, 4);
+            if (sittingPoses == null || sittingPoses.Length != 3) System.Array.Resize(ref sittingPoses, 3);
+            if (walkFrames == null || walkFrames.Length != 2) System.Array.Resize(ref walkFrames, 2);
         }
 #endif
     }
