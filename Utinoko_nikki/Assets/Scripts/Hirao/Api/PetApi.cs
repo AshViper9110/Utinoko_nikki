@@ -1,16 +1,48 @@
+
+using System;
 using UnityEngine;
 
-public class PetApi : MonoBehaviour
+namespace AquaGarden.Api
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public sealed class PetApi : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private GameApiClient client;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField]
+        private string petPath = "pets";
+
+        private void Awake()
+        {
+            if (client == null)
+                client = FindFirstObjectByType<GameApiClient>();
+        }
+
+        public void GetPets(
+            Action<bool, string, long> onComplete)
+        {
+            if (client == null)
+            {
+                onComplete?.Invoke(
+                    false, "GameApiClient Ç™å©Ç¬Ç©ÇËÇ‹ÇπÇÒÅB", 0);
+                return;
+            }
+
+            client.Get(petPath, onComplete);
+        }
+
+        public void UpdatePet(
+            string updatePath,
+            string requestJson,
+            Action<bool, string, long> onComplete)
+        {
+            if (client == null)
+            {
+                onComplete?.Invoke(
+                    false, "GameApiClient Ç™å©Ç¬Ç©ÇËÇ‹ÇπÇÒÅB", 0);
+                return;
+            }
+
+            client.Put(updatePath, requestJson, onComplete);
+        }
     }
 }

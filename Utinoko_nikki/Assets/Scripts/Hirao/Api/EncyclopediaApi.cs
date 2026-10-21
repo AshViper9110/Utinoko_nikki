@@ -1,16 +1,33 @@
+
+using System;
 using UnityEngine;
 
-public class EncyclopediaApi : MonoBehaviour
+namespace AquaGarden.Api
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public sealed class EncyclopediaApi : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private GameApiClient client;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField]
+        private string encyclopediaPath = "encyclopedia";
+
+        private void Awake()
+        {
+            if (client == null)
+                client = FindFirstObjectByType<GameApiClient>();
+        }
+
+        public void GetEntries(
+            Action<bool, string, long> onComplete)
+        {
+            if (client == null)
+            {
+                onComplete?.Invoke(
+                    false, "GameApiClient Ç™å©Ç¬Ç©ÇËÇ‹ÇπÇÒÅB", 0);
+                return;
+            }
+
+            client.Get(encyclopediaPath, onComplete);
+        }
     }
 }
