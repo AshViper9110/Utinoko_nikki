@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548575595038",
+    "project_id": "utinokonikki-8fd7a",
+    "storage_bucket": "utinokonikki-8fd7a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548575595038:android:b050629a510b6d13e9bc0f",
+        "android_client_info": {
+          "package_name": "jp.ac.yoshidajobi.utinokonikki"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAppC1FAA9k8G9GbXdKAfKpZUJSs4tS3PU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
