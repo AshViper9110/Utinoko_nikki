@@ -1,0 +1,50 @@
+### 家族関係の登録
+POST http://localhost/api/familyLink
+Content-Type: application/json
+Accept: application/json
+
+{
+    "elder_user_id": 1,
+    "family_user_id": 1,
+    "relationship": "孫"
+}
+
+### 家族関係の取得
+GET http://localhost/api/familyLink
+Accept: application/json
+
+### 家族ユーザー登録
+POST http://localhost/api/familyUser
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "佐藤花子",
+    "firebase_uid": "test_family_uid_002"
+}
+
+### 家族ユーザー全件取得
+GET http://localhost/api/familyUser
+Accept: application/json
+
+### ID指定取得
+GET http://localhost/api/familyUser?id=3
+Accept: application/json
+
+### 高齢者ユーザー登録
+POST http://localhost/api/elderUser
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "佐藤里子",
+    "firebase_uid": "test_elder_uid_002"
+}
+
+### 高齢者ユーザー全件取得
+GET http://localhost/api/elderUser
+Accept: application/json
+
+### ID指定取得
+GET http://localhost/api/elderUser?id=1
+Accept: application/json

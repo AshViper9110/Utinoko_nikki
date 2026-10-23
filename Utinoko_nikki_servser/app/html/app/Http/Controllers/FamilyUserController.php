@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class FamilyUserController extends Controller
 {
+    // 家族ユーザー取得
     public function index(Request $request): JsonResponse
     {
         $id = $request->query('id');
@@ -26,5 +27,31 @@ class FamilyUserController extends Controller
             ->get();
 
         return response()->json($user);
+    }
+
+    // 家族ユーザー登録
+    public function store(Request $request): JsonResponse
+    {
+        // バリデーション
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'firebase_uid' => 'required|string|max:128|unique:family_users,firebase_uid',
+        ]);
+
+        // データ登録
+        $id = DB::table('family_users')->insertGetId([
+            'name' => $validated['name'],
+            'firebase_uid' => $validated['firebase_uid'],
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        // 登録したユーザーを取得
+        $user = DB::table('family_users')
+            ->select('id', 'name', 'firebase_uid')
+            ->where('id', $id)
+            ->first();
+
+        return response()->json($user, 201);
     }
 }
