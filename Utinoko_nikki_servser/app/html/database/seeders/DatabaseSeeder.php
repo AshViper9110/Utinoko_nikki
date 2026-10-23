@@ -27,6 +27,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserpetsSeeder::class,
         ]);
+        $this->call([
+            FamilyUserSeeder::class,
+        ]);
+        $this->call([
+            FamilyLinkSeeder::class,
+        ]);
     }
 
 }
