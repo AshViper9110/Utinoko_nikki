@@ -10,5 +10,8 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/items', [Controllers\ItemController::class, 'index']);
 Route::get('/elderUser', [Controllers\ElderUserController::class, 'index']);
+Route::post('/elderUser', [Controllers\ElderUserController::class, 'store']);
 Route::get('/familyUser', [Controllers\FamilyUserController::class, 'index']);
-Route::get('/familyLink', [Controllers\FamilyLinkContoroller::class, 'index']);
+Route::post('/familyUser', [Controllers\FamilyUserController::class, 'store']);
+Route::get('/familyLink', [Controllers\FamilyLinkController::class, 'index']);
+Route::post('/familyLink', [Controllers\FamilyLinkController::class, 'store']);
