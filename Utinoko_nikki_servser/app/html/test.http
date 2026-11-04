@@ -1,5 +1,5 @@
 ### 家族関係の登録
-POST http://localhost/api/familyLink
+POST http://localhost/api/family-link
 Content-Type: application/json
 Accept: application/json
 
@@ -10,11 +10,11 @@ Accept: application/json
 }
 
 ### 家族関係の取得
-GET http://localhost/api/familyLink
+GET http://localhost/api/family-link
 Accept: application/json
 
 ### 家族ユーザー登録
-POST http://localhost/api/familyUser
+POST http://localhost/api/family-user
 Content-Type: application/json
 Accept: application/json
 
@@ -24,15 +24,15 @@ Accept: application/json
 }
 
 ### 家族ユーザー全件取得
-GET http://localhost/api/familyUser
+GET http://localhost/api/family-user
 Accept: application/json
 
 ### ID指定取得
-GET http://localhost/api/familyUser?id=3
+GET http://localhost/api/family-user?id=3
 Accept: application/json
 
 ### 高齢者ユーザー登録
-POST http://localhost/api/elderUser
+POST http://localhost/api/elder-user
 Content-Type: application/json
 Accept: application/json
 
@@ -42,9 +42,26 @@ Accept: application/json
 }
 
 ### 高齢者ユーザー全件取得
-GET http://localhost/api/elderUser
+GET http://localhost/api/elder-user
 Accept: application/json
 
 ### ID指定取得
-GET http://localhost/api/elderUser?id=1
+GET http://localhost/api/elder-user?id=1
 Accept: application/json
+
+###ゲームマスターデータ取得
+GET http://localhost/api/games
+Accept: application/json
+
+###ゲームマスターデータid指定取得
+GET http://localhost/api/games?id=4
+Accept: application/json
+
+### ゲーム登録
+POST http://localhost/api/games
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "ゲーム4"
+}
