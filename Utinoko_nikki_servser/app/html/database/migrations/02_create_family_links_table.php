@@ -22,7 +22,10 @@ return new class extends Migration
 
             $table->string('relationship', 50);
 
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at')
+                ->useCurrent()
+                ->useCurrentOnUpdate();
 
             $table->unique(['elder_user_id', 'family_user_id']);
         });
