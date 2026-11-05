@@ -1,7 +1,8 @@
-using UnityEngine;
 using Firebase;
 using Firebase.Auth;
+using System;
 using System.Threading.Tasks;
+using UnityEngine;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -88,10 +89,17 @@ public class FirebaseManager : MonoBehaviour
             Debug.Log($"ログイン成功 UID: {user.UserId}");
             return true;
         }
-        catch (System.Exception e)
+        catch (FirebaseException ex)
         {
-            Debug.LogError($"ログイン失敗: {e.Message}");
+            Debug.LogError($"Firebase ErrorCode: {ex.ErrorCode}");
+            Debug.LogError($"Firebase Message: {ex.Message}");
+            Debug.LogError($"Firebase Exception: {ex}");
             return false;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Exception: {ex}");
+            return false ;
         }
     }
 
