@@ -65,3 +65,90 @@ Accept: application/json
 {
     "name": "ゲーム4"
 }
+
+###ゲームログ取得
+GET http://localhost/api/play-log
+Accept: application/json
+
+###ゲームログ登録
+POST http://localhost/api/play-log
+Content-Type: application/json
+Accept: application/json
+
+{
+    "elder_user_id": 1,
+    "game_id": 3,
+    "score": 100
+}
+
+###ビデオマスター取得
+GET http://localhost/api/videos
+Accept: application/json
+
+###ビデオ登録
+POST http://localhost/api/videos
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "はじめ",
+    "url": "qwertyuiopqwertyuiop"
+}
+
+###ユーザー所持アイテム取得
+GET http://localhost/api/user-item
+Accept: application/json
+
+
+###ユーザーアイテム取得登録
+POST http://localhost/api/user-item
+Content-Type: application/json
+Accept: application/json
+
+{
+    "elder_user_id": 1,
+    "items_id": 1,
+    "quantity": 1
+}
+
+###動物マスターデータ取得
+GET http://localhost/api/animals
+Accept: application/json
+
+###動物登録
+POST http://localhost/api/animals
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "ゴールデンレトリーバー"
+}
+
+###ペット取得
+GET http://localhost/api/user-pets
+Accept: application/json
+
+###ペット登録
+POST http://localhost/api/user-pets
+Content-Type: application/json
+Accept: application/json
+
+{
+    "elder_user_id": 1,
+    "animals_id": 2,
+    "nickname": "ゴールド"
+}
+
+###視聴履歴取得
+GET http://localhost/api/watch-logs
+Accept: application/json
+
+###視聴履歴登録
+POST http://localhost/api/watch-logs
+Content-Type: application/json
+Accept: application/json
+
+{
+    "elder_user_id": 1,
+    "videos_id": 1
+}
