@@ -16,6 +16,7 @@ namespace AquaGarden.Systems
         private string SavePath => Path.Combine(Application.persistentDataPath, "aquagarden_save.json");
         public GameSettingsData Settings => settings;
         public string LastError { get; private set; }
+        public event Action DataLoaded;
 
         public bool SaveNow()
         {
@@ -85,13 +86,19 @@ namespace AquaGarden.Systems
                 settings = data.settings;
 
                 LastError = null;
+
                 Debug.Log("Aqua Garden loaded from: " + sourcePath, this);
+
+                // データの復元完了を通知
+                DataLoaded?.Invoke();
+
                 return true;
             }
             catch (Exception ex)
             {
                 LastError = ex.Message;
                 Debug.LogError("Load failed: " + ex, this);
+                DataLoaded?.Invoke();
                 return false;
             }
         }

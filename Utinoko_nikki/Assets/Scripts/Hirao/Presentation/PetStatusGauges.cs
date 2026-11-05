@@ -21,6 +21,9 @@ namespace AquaGarden.Presentation
 
         [Header("éQè∆")]
         [SerializeField] private PetCareSystem petCareSystem;
+        [SerializeField] private LoadingScreenController loadingScreenController;
+
+        public event System.Action PetInfoUpdated;
 
         private void Awake()
         {
@@ -94,6 +97,8 @@ namespace AquaGarden.Presentation
 
             SetGauge(hungerSlider, hungerLabel, pet.hunger, "ñûï†ìx");
             SetGauge(affectionSlider, affectionLabel, pet.affection, "Ç»Ç©ÇÊÇµìx");
+
+            loadingScreenController.NotifyInitializationCompleted();
         }
 
         private void SetGauge(

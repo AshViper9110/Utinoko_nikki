@@ -11,7 +11,7 @@ namespace AquaGarden.Presentation
         [SerializeField] private HabitatManager habitatManager;
 
         private SpriteRenderer spriteRenderer;
-
+        public event System.Action PetViewReady;
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
