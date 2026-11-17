@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class UserPetContoroller extends Controller
 {
-    // 所持アイテム取得
+    // 育成中ペット取得
     public function index(Request $request): JsonResponse
     {
         $id = $request->query('id');
@@ -37,7 +37,7 @@ class UserPetContoroller extends Controller
         return response()->json($query->get());
     }
 
-    // 所持アイテム登録
+    // 育成ペット登録
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -58,5 +58,87 @@ class UserPetContoroller extends Controller
             ->first();
 
         return response()->json($item, 201);
+    }
+
+    //育成ペット編集
+    public function update(Request $request, int $id): JsonResponse
+    {
+        // 対象のペットが存在するか確認
+        $pet = DB::table('user_pets')
+            ->where('id', $id)
+            ->first();
+
+        if (!$pet) {
+            return response()->json([
+                'message' => '指定されたペットが存在しません。'
+            ], 404);
+        }
+
+        // バリデーション
+        $validated = $request->validate([
+            'nickname' => 'required|string|max:255',
+        ]);
+
+        try {
+            // ペット情報を更新
+            DB::table('user_pets')
+                ->where('id', $id)
+                ->update([
+                    'nickname' => $validated['nickname'],
+                    'updated_at' => now(),
+                ]);
+
+            // 更新後のデータを取得
+            $pet = DB::table('user_pets')
+                ->where('id', $id)
+                ->first();
+
+            return response()->json($pet, 200);
+
+        } catch (\Illuminate\Database\QueryException $e) {
+            return response()->json([
+                'message' => 'ペットの更新中にデータベースエラーが発生しました。'
+            ], 500);
+        }
+    }
+
+    //育成ペット削除
+    public function destroy(int $id): JsonResponse
+    {
+        // 対象のペットが存在するか確認
+        $pet = DB::table('user_pets')
+            ->where('id', $id)
+            ->first();
+
+        if (!$pet) {
+            return response()->json([
+                'message' => '指定されたペットが存在しません。'
+            ], 404);
+        }
+
+        try {
+            // ペットを削除
+            DB::table('user_pets')
+                ->where('id', $id)
+                ->delete();
+
+            return response()->json([
+                'message' => 'ペットを削除しました。'
+            ], 200);
+
+        } catch (\Illuminate\Database\QueryException $e) {
+
+            // 外部キー制約違反
+            if (($e->errorInfo[1] ?? null) === 1451) {
+                return response()->json([
+                    'message' => 'このペットは他のデータから参照されているため削除できません。'
+                ], 409);
+            }
+
+            // その他のDBエラー
+            return response()->json([
+                'message' => 'ペットの削除中にデータベースエラーが発生しました。'
+            ], 500);
+        }
     }
 }

@@ -124,6 +124,19 @@ Accept: application/json
     "name": "ゴールデンレトリーバー"
 }
 
+###
+PUT http://localhost/api/animals/1
+Content-Type: application/json
+Accept: application/json
+
+{
+"name": "白猫"
+}
+
+###
+DELETE http://localhost/api/animals/2
+Accept: application/json
+
 ###ペット取得
 GET http://localhost/api/user-pets
 Accept: application/json
@@ -138,6 +151,19 @@ Accept: application/json
     "animals_id": 2,
     "nickname": "ゴールド"
 }
+
+###
+PUT http://localhost/api/user-pets/1
+Content-Type: application/json
+Accept: application/json
+
+{
+"nickname": "白"
+}
+
+###
+DELETE http://localhost/api/user-pets/2
+Accept: application/json
 
 ###視聴履歴取得
 GET http://localhost/api/watch-logs

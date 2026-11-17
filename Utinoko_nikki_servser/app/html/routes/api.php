@@ -23,9 +23,16 @@ Route::get('/videos', [Controllers\VideoController::class, 'index']);
 Route::post('/videos', [Controllers\VideoController::class, 'store']);
 Route::get('/user-item', [Controllers\UserItemsController::class, 'index']);
 Route::post('/user-item', [Controllers\UserItemsController::class, 'store']);
+
 Route::get('/animals', [Controllers\AnimalsController::class, 'index']);
 Route::post('/animals', [Controllers\AnimalsController::class, 'store']);
+Route::put('/animals/{id}', [Controllers\AnimalsController::class, 'update']);
+Route::delete('/animals/{id}', [Controllers\AnimalsController::class, 'destroy']);
+
 Route::get('/user-pets', [Controllers\UserPetContoroller::class, 'index']);
 Route::post('/user-pets', [Controllers\UserPetContoroller::class, 'store']);
+Route::put('/user-pets/{id}', [Controllers\UserPetContoroller::class, 'update']);
+Route::delete('/user-pets/{id}', [Controllers\UserPetContoroller::class, 'destroy']);
+
 Route::get('/watch-logs', [Controllers\WatchLogContoroller::class, 'index']);
 Route::post('/watch-logs', [Controllers\WatchLogContoroller::class, 'store']);
