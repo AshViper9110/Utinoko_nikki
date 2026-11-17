@@ -9,12 +9,22 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/items', [Controllers\ItemController::class, 'index']);
+
 Route::get('/elder-user', [Controllers\ElderUserController::class, 'index']);
 Route::post('/elder-user', [Controllers\ElderUserController::class, 'store']);
+Route::put('/elderUser/{id}', [Controllers\ElderUserController::class, 'update']);
+Route::delete('/elderUser/{id}', [Controllers\ElderUserController::class, 'destroy']);
+
 Route::get('/family-user', [Controllers\FamilyUserController::class, 'index']);
 Route::post('/family-user', [Controllers\FamilyUserController::class, 'store']);
+Route::put('/familyUser/{id}', [Controllers\FamilyUserController::class, 'update']);
+Route::delete('/familyUser/{id}', [Controllers\FamilyUserController::class, 'destroy']);
+
 Route::get('/family-link', [Controllers\FamilyLinkController::class, 'index']);
 Route::post('/family-link', [Controllers\FamilyLinkController::class, 'store']);
+Route::put('/familyLink/{id}', [Controllers\FamilyLinkController::class, 'update']);
+Route::delete('/familyLink/{id}', [Controllers\FamilyLinkController::class, 'destroy']);
+
 Route::get('/games', [Controllers\GameController::class, 'index']);
 Route::post('/games', [Controllers\GameController::class, 'store']);
 Route::get('/play-log', [Controllers\PlayLogController::class, 'index']);
