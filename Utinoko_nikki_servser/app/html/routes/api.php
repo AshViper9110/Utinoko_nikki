@@ -9,8 +9,12 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/items', [Controllers\ItemController::class, 'index']);
+
 Route::get('/elder-user', [Controllers\ElderUserController::class, 'index']);
 Route::post('/elder-user', [Controllers\ElderUserController::class, 'store']);
+Route::put('/elderUser/{id}', [Controllers\ElderUserController::class, 'update']);
+Route::delete('/elderUser/{id}', [Controllers\ElderUserController::class, 'destroy']);
+
 Route::get('/family-user', [Controllers\FamilyUserController::class, 'index']);
 Route::post('/family-user', [Controllers\FamilyUserController::class, 'store']);
 Route::get('/family-link', [Controllers\FamilyLinkController::class, 'index']);

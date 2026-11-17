@@ -53,6 +53,7 @@ class AnimalsController extends Controller
         return response()->json($animal, 201);
     }
 
+    //編集
     public function update(Request $request, int $id): JsonResponse
     {
         // バリデーション
@@ -88,7 +89,7 @@ class AnimalsController extends Controller
         return response()->json($animal, 200);
     }
 
-
+    //削除
     public function destroy(int $id): JsonResponse
     {
         // 動物が存在するか確認

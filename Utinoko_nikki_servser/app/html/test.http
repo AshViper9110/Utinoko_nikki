@@ -49,6 +49,23 @@ Accept: application/json
 GET http://localhost/api/elder-user?id=1
 Accept: application/json
 
+### 高齢者ユーザー編集
+PUT http://localhost/api/elderUser/1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "和田幸子"
+}
+
+### 高齢者ユーザー削除
+DELETE http://localhost/api/elderUser/1
+Accept: application/json
+
+### 高齢者ユーザー削除
+DELETE http://localhost/api/elderUser/1
+Accept: application/json
+
 ###ゲームマスターデータ取得
 GET http://localhost/api/games
 Accept: application/json
@@ -91,8 +108,8 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "はじめ",
-    "url": "qwertyuiopqwertyuiop"
+    "name": "Kimuのスプラテゥーン",
+    "url": "https://emedia39.github.io/portfolio/Media/131_Game-Video.mp4"
 }
 
 ###ユーザー所持アイテム取得
