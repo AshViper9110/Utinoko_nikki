@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 86451529}
   - component: {fileID: 86451528}
   m_Layer: 5
-  m_Name: ERROR-Text-00 (Legacy)
+  m_Name: ERROR-Text-01 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 192313077}
   - component: {fileID: 192313076}
   m_Layer: 5
-  m_Name: guardian Button (Legacy)
+  m_Name: Family Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,7 +653,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2115222796}
         m_TargetAssemblyTypeName: SelectScript, Assembly-CSharp
-        m_MethodName: GuardianButton
+        m_MethodName: FamilyButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 196225230}
   - component: {fileID: 196225229}
   m_Layer: 5
-  m_Name: Senior Button (Legacy)
+  m_Name: Elder Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -786,7 +786,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2115222796}
         m_TargetAssemblyTypeName: SelectScript, Assembly-CSharp
-        m_MethodName: SeniorButton
+        m_MethodName: ElderButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315222076}
   m_Layer: 0
-  m_Name: 20.Completion Object
+  m_Name: 50.Completion Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1322,7 +1322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477221313}
   m_Layer: 0
-  m_Name: 00.Create Account Object
+  m_Name: 01.Create Account Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1439,7 +1439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527848691}
   m_Layer: 0
-  m_Name: 02.Enter Certification Object
+  m_Name: 11.Enter Certification Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,7 +1555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 612341376}
   m_Layer: 0
-  m_Name: 01.Initial Select Object
+  m_Name: 00.Initial Select Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1804,7 +1804,7 @@ GameObject:
   - component: {fileID: 716353209}
   - component: {fileID: 716353208}
   m_Layer: 5
-  m_Name: guardian Text (Legacy)
+  m_Name: Family Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2593,7 +2593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1021006760
 Transform:
   m_ObjectHideFlags: 0
@@ -2860,7 +2860,7 @@ GameObject:
   - component: {fileID: 1175395077}
   - component: {fileID: 1175395076}
   m_Layer: 5
-  m_Name: Text-02 (Legacy)
+  m_Name: Text-11 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2939,7 +2939,7 @@ GameObject:
   - component: {fileID: 1237719073}
   - component: {fileID: 1237719072}
   m_Layer: 5
-  m_Name: Text-20 (Legacy)
+  m_Name: Text-50 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3621,7 +3621,7 @@ GameObject:
   - component: {fileID: 1477641937}
   - component: {fileID: 1477641936}
   m_Layer: 5
-  m_Name: Text-13 (Legacy)
+  m_Name: Text-40 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4048,8 +4048,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 477221313}
   - {fileID: 612341376}
+  - {fileID: 477221313}
   - {fileID: 527848691}
   - {fileID: 1021006760}
   - {fileID: 1891957493}
@@ -4225,7 +4225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1891957493}
   m_Layer: 0
-  m_Name: 13.Confirmation Select Object
+  m_Name: 40.Confirmation Select Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4396,7 +4396,7 @@ GameObject:
   - component: {fileID: 1944771357}
   - component: {fileID: 1944771356}
   m_Layer: 5
-  m_Name: ERROR-Text-02 (Legacy)
+  m_Name: ERROR-Text-11 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 2084692281}
   - component: {fileID: 2084692280}
   m_Layer: 5
-  m_Name: Senior Text (Legacy)
+  m_Name: Elder Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4924,7 +4924,7 @@ GameObject:
   - component: {fileID: 2092794572}
   - component: {fileID: 2092794571}
   m_Layer: 5
-  m_Name: Text-00 (Legacy)
+  m_Name: Text-01 (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5119,14 +5119,14 @@ MonoBehaviour:
   _CodeText: {fileID: 2123073800}
   _InputNameField: {fileID: 25743354}
   _NameText: {fileID: 1346042911}
-  addressObject: {fileID: 477221312}
   initialSelectObject: {fileID: 612341375}
+  addressObject: {fileID: 477221312}
   certificationObject: {fileID: 527848690}
   enterNameObject: {fileID: 1021006759}
   confirmationSelectObject: {fileID: 1891957492}
   completionObject: {fileID: 315222075}
-  _ERROR_Text00: {fileID: 86451528}
-  _ERROR_Text02: {fileID: 1944771356}
+  _ERROR_Text01: {fileID: 86451528}
+  _ERROR_Text11: {fileID: 1944771356}
   _ERROR_Text12: {fileID: 499704543}
   _Content_Confirmation_Text: {fileID: 2083682746}
 --- !u!1 &2123073798
