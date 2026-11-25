@@ -33,6 +33,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             FamilyLinkSeeder::class,
         ]);
+        $this->call([
+            AdminUsersSeeder::class,
+        ]);
     }
 
 }
